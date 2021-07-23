@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import App from './App.vue'
-
 import Modal from "@burhanahmeed/vue-modal-2";
 
 Vue.use(Modal, {

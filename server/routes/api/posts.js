@@ -1,16 +1,17 @@
 var express = require("express");
 var mongodb = require("mongodb");
 
-
+// Använder express router för att ändra adressen
 const router = express.Router();
 
-// Get Posts
+// Hämta inlägg
 router.get('/', async (req, res) => {
+    //Eftersom det är en async funktion behöver vi köra await
     const posts = await loadPostsCollection();
     res.send(await posts.find({}).toArray());
 });
 
-// Add Post
+// Lägg till inlägg
 router.post('/', async (req, res) => {
     const posts = await loadPostsCollection();
     await posts.insertOne({
@@ -22,7 +23,7 @@ router.post('/', async (req, res) => {
     res.status(201).send();
 });
 
-// Delete Post
+// Radera Inlägg
 router.delete('/delete/:id', async (req, res) => {
     const posts = await loadPostsCollection();
     await posts.deleteOne({_id: new mongodb.ObjectID(req.params.id)})
@@ -38,7 +39,7 @@ router.delete('/delete/:id', async (req, res) => {
       { upsert: true })
       
       // Send response in here
-      res.send('Item Updated!');
+      res.send('Inlägg uppdaterat!');
 
     } catch(err) {
         console.error(err.message);
@@ -46,7 +47,7 @@ router.delete('/delete/:id', async (req, res) => {
     }
 });
 
-
+// Skapar koppling till mongodb 
 async function loadPostsCollection(){
     const client = await mongodb.MongoClient.connect('mongodb+srv://root:toor@cluster0.v5xcd.mongodb.net/classGrader?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
     return client.db('classGrader').collection('grades');

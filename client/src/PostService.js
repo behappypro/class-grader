@@ -3,7 +3,7 @@ import axios from 'axios';
 const url = 'api/posts/';
 
 class PostService{
-    // Get Posts
+    // Hämtar inlägg med hjälp av Axios HTTP bibliotek istället för inbyggda XMLHttpRequest (xhr)
     // static för att slippa initiera post objekt
     static getPosts() {
         return new Promise ((resolve,reject) => {
@@ -25,7 +25,7 @@ class PostService{
         });
     }
     
-    // Create Posts
+    // Skapa inlägg
     static insertPost(namn,moment,omdome){
         if(namn && moment && omdome > ''){
             return axios.post(url,{
@@ -35,16 +35,16 @@ class PostService{
             });
         }
         else{
-            console.log("Fel "+omdome);
+            console.log("Fel vid skapning av inlägg");
         }    
     }
 
-    // Delete Posts
+    // Radera inlägg
     static deletePost(id){
         return axios.delete(url+'delete/'+id);
     }
 
-    // Update Post
+    // Uppdatera inlägg
     static updatePost(namn,moment,omdome,id){
         axios.put(url+'update/'+id, {
             namn: namn,

@@ -31,7 +31,7 @@ const posts = require('./routes/api/posts');
 
 app.use('/api/posts', posts);
 
-// Handle Production
+// Hantera för produktion
 if(process.env.NODE_ENV === 'production'){
     // Static folder
     app.use(express.static(__dirname + '/public/'));
