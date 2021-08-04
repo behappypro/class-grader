@@ -38,7 +38,7 @@ router.delete('/delete/:id', async (req, res) => {
       { $set: { namn: req.body.namn,moment:req.body.moment,omdome:req.body.omdome},},
       { upsert: true })
       
-      // Send response in here
+      // Skicka respons
       res.send('Inlägg uppdaterat!');
 
     } catch(err) {

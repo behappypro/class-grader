@@ -2,13 +2,8 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var cors = require('cors');
-var path = require("path");
-var mongoose = require("mongoose");
-mongoose.set('useNewUrlParser', true);
-mongoose.set('useFindAndModify', false);
-mongoose.set('useCreateIndex', true);
-mongoose.set('useUnifiedTopology', true);
-// anslut till databas
+
+// anslut till databas via mongoose
 //mongoose.connect("mongodb://localhost:27017/courses", { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Skapa instans av express
