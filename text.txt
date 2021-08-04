@@ -1,0 +1,4 @@
+npm run build
+git add .
+git commit -m 'Newest Update 2021/07/23'
+git push --set-upstream master master 
