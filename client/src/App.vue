@@ -1,19 +1,26 @@
 <template>
   <div id="app">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <headerComponent />
    <img width="350" height="170" id="logo" alt="Vue logo" src="./assets/logo.png">
    <!--Skriver ut innehållet i PostComponent till webbsidan-->
     <PostComponent />
+    <footerComponent />
   </div>
 </template>
 
 <script>
 //Laddar in ny komponent
 import PostComponent from './components/PostComponent.vue'
+import headerComponent from './components/headerComponent.vue'
+import footerComponent from './components/footerComponent.vue'
 
 export default {
   name: 'App',
   components: {
-    PostComponent
+    PostComponent,
+    headerComponent,
+    footerComponent
   }
 }
 </script>
@@ -25,6 +32,10 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin: 0;
+  padding: 0;
+}
+body{
+  margin: 0;
 }
 </style>

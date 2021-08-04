@@ -7,7 +7,7 @@
       <h2>Skriv Omdöme</h2>
        <!--Formulär för att skapa inlägg-->
       <form id="form-wrapper"> 
-        <input  type="text" name="create-name" id="create-name" v-model="namn" placeholder="Namn" required>
+        <input type="text" name="create-name" id="create-name" v-model="namn" placeholder="Namn" required>
         <input type="text" name="create-moment" id="create-moment" v-model="moment" placeholder="Moment" required>
         <select name="omdome" placeholder="Omdöme" id="omdome" v-model="omdome" required>
           <option value="" disabled selected hidden>Omdöme</option>
@@ -33,7 +33,6 @@
       v-bind:item="post"
       v-bind:index="index"
       v-bind:key="post._id"
-
       >
        <!--Kollar om inlägget håller på att bli redigerat, om ja, nedan visas-->
       <div v-if="editPost == post._id">
@@ -51,7 +50,6 @@
         </div>
                 <button type="submit" v-on:click="updatePost(post.namn,post.moment,post.omdome,post._id)">Spara</button>
                 <button type="reset" v-on:click="cancelEdit()">Avbryt</button>
-
           </div>
           <div v-else>
         <!--Om ingen redigering sker, visas inläggen som vanligt-->

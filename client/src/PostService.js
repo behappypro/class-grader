@@ -25,7 +25,7 @@ class PostService{
         });
     }
     
-    // Skapa inlägg
+    // Statisk funktion för att skapa inlägg
     static insertPost(namn,moment,omdome){
         if(namn && moment && omdome > ''){
             return axios.post(url,{
@@ -35,7 +35,7 @@ class PostService{
             });
         }
         else{
-            console.log("Fel vid skapning av inlägg");
+            console.log("Fel vid skapandet av inlägg");
         }    
     }
 
@@ -50,9 +50,7 @@ class PostService{
             namn: namn,
             moment: moment,
             omdome: omdome
-    })
-        
-    }
+    })}
 
 }
 
