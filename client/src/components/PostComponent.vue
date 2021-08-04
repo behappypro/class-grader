@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+       <img width="350" height="170" id="logo" alt="Vue logo" src="../assets/logo.png">
     <!--Skapa inlägg-->
     <div class="create-post">
        <!--Sökfunktion-->

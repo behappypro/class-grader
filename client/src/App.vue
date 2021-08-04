@@ -2,7 +2,6 @@
   <div id="app">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <headerComponent />
-   <img width="350" height="170" id="logo" alt="Vue logo" src="./assets/logo.png">
    <!--Skriver ut innehållet i PostComponent till webbsidan-->
     <PostComponent />
     <footerComponent />
