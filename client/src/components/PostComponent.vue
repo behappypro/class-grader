@@ -59,9 +59,27 @@
       <div class="whole-container">
       <div class="text-container">
       <!--Skriver ut innehållet i inlägget under tre rubriker-->  
-      <p class="text">Namn<br><br>{{post.namn}}</p>
-      <p class="text">Moment<br><br>{{post.moment}}</p>
-      <p class="text">Omdöme<br><br>{{post.omdome}}</p>
+      <table>
+        <thead>
+        <tr>
+          <th>Namn:</th>
+          <th>Moment:</th>
+          <th>Omdöme:</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>{{post.namn}}</td>
+          <td>{{post.moment}}</td>
+          <td>{{post.omdome}}</td>
+        </tr>
+        </tbody>
+      </table>
+      <!--
+      <p class="text">Namn: </p>
+      <p class="text">Moment: </p>
+      <p class="text">Omdöme: </p>
+      -->
 
       </div>
             
@@ -195,13 +213,30 @@ div.created-at {
   background-color: darkgreen; 
   }
 
-p.text { 
+p.text,td,th { 
   font-size: 22px; 
   font-weight: 700; 
   margin-bottom: 0; 
   display: inline-block;
   margin: 10px;
   }
+  th:first-child,td:first-child{
+    width: 220px;
+  }
+
+  th:nth-child(2),td:nth-child(2){
+    width: 120px;
+  }
+
+   th:nth-child(3),td:nth-child(3){
+    width: 80px;
+  }
+
+  tr{
+    display: inline-block;
+  }
+  
+ 
   .buttons{
     float: right;
     margin: 10px;
@@ -226,8 +261,8 @@ p.text {
 
   .text-container{
    float: left;
-    width: 475px;
-    margin-left: 150px;
+  width: 490px;
+  margin-left: 50px;
   }
   .whole-container{
     width: 750px;
@@ -366,7 +401,72 @@ button.delete, button.edit{
 #logo,img {
     width: 60%;
 }
+
+thead {
+  float: left;   
+}
+
+
+thead th {
+  display: block;
+  margin: 0;
+  width: auto !important;  
+  text-align: left; 
+}
+
+tbody {
+  float: right;   
+}
+
+tbody td {
+  display: block; 
+  margin: 0; 
+}
+
+
+  th:first-child,th:nth-child(2),th:nth-child(3){
+    margin-top: 30px;
+    margin-bottom: 30px;
+    
+
+  }
+
+   td:first-child,td:nth-child(2),td:nth-child(3){
+    border-bottom: 1px solid black;
+     margin-top: 30px;
+    margin-bottom: 30px;
+    width: auto;
+  }
+  td:first-child{
+    margin-top: 25px;
+    text-align: left;
+  }
+   td:nth-child(2){
+     margin-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  tr{
+    display: inline-block;
+    
+  }
+
+  table {
+    margin: 0 auto;
+}
+
+div.post{
+  margin: 5px;
+  border: 3px solid #344455;
+  padding: 0px;
+}
   
+}
+
+@media(max-width: 340px){
+  table, table td, table tr, table th { display: inline-grid; } 
+  table th, table td { margin: 0;}
+  table thead { display: none; }
 }
 
 
