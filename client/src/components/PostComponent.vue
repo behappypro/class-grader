@@ -55,7 +55,9 @@
           <div v-else>
         <!--Om ingen redigering sker, visas inläggen som vanligt-->
        <!--Skriver ut datum inläggen skapades-->
+       <div class="date">
       {{`${post.createdAt.getDate()}/${post.createdAt.getMonth()}/${post.createdAt.getFullYear()}`}}<br>
+      </div>
       <div class="whole-container">
       <div class="text-container">
       <!--Skriver ut innehållet i inlägget under tre rubriker-->  
@@ -75,12 +77,6 @@
         </tr>
         </tbody>
       </table>
-      <!--
-      <p class="text">Namn: </p>
-      <p class="text">Moment: </p>
-      <p class="text">Omdöme: </p>
-      -->
-
       </div>
             
       <!--Läger till penna och papperskorg vid varje nytt inlägg för redigering och bortagning-->
@@ -351,6 +347,13 @@ select:invalid{
 
 .vm2_wrapper{
   z-index: 100;
+}
+
+.date {
+    background-color: #344455;
+    color: white;
+    font-weight: 800;
+    padding: 10px;
 }
 
 /*Denna del stylar för ipad och mindre skärmar*/
